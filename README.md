@@ -1,7 +1,8 @@
 # python-flask-api-sqlalchemy-application
 
 Requirements:
-requirements.txt include packages to run the web application.
+Packages: requirements.txt include packages to run the web application.
+Main file: to run app.py
 
 About:
 Establish environment (virtual environment, package installation, link HTML/CSS).
