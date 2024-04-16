@@ -1,0 +1,49 @@
+#pip freeze > requirements.txt
+#packages that anyone who works with this project needs.
+
+blinker==1.7.0
+click==8.1.7
+Flask==3.0.3
+Flask-Scss==0.5
+Flask-SQLAlchemy==3.1.1
+greenlet==3.0.3
+itsdangerous==2.1.2
+Jinja2==3.1.3
+MarkupSafe==2.1.5
+pyScss==1.4.0
+six==1.16.0
+SQLAlchemy==2.0.29
+typing_extensions==4.11.0
+Werkzeug==3.0.2
+
+
+
+#useful notes
+
+#HTML Inheritance: Base parent template with HTML and CSS file, and create children files which
+#they will inherit the initial template from the parent and all the styling.
+#Inject children HTML as needed.
+
+# POST = send data ; GET = receive data
+
+#Decorator in Python extend the behavior of another function, prefixed with @
+
+# http://localhost:5000
+
+# python3 -m flask run
+
+# <link rel="stylesheet" href="style.css">
+
+# <link rel="stylesheet" href="{{url_for("static",filename="styles.css")}}">
+
+# <tr>  —table row 
+# <td> —table data
+# {%block head%}{% endblock %} <!--transfer code between html files-->
+
+
+###Container Chapters
+# Step 1. Setup of (virtual env, packages, link HTML/CSS)
+# Step 2.Create database to hold data.
+# step 3.Add task to database like POST. Delete task. and also edit like GETPOST.
+# Step 3:Make it pretty styling.
+

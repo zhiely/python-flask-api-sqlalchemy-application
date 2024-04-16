@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+
+{% if event %}
+    <h1>Event Added!</h1>
+    <br><br><br>
+{% endif %}
+
+{% if our_events %}
+    <h1> Demo - Event List</h1>
+    <br/>
+<div class="shadow p-3 mb-5 bg-body rounded">
+
+    <!-- Create CSRF token -->
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <!-- Reference label for StringField in Event class -->
+        <!-- Input box for event -->
+        {{ form.event.label(class="form-label") }}
+        {{ form.event(class="form-control") }}
+
+        <br/>
+
+        <!-- Submit button -->
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+
+</div>
+<br/><br/><br/>
+
+<!-- Show what's in the database on screen -->
+<table class="table table-hover table-table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Event</th>
+      <th scope="col">Organizer</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for our_event in our_events %}
+    <tr>
+      <td>{{ our_event.id }}</td>
+      <td>{{ our_event.event }}</td>
+      <td>{{ our_event.organizer }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+{% endblock %}
